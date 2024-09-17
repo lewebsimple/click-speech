@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-click-speech] {
+  @apply relative;
+  &:before {
+    content: "";
+    @apply absolute top-0 right-[calc(100%+0.25rem)];
+    @apply w-6 h-6 cursor-pointer;
+    @apply bg-[url(./speaker.svg)];
+  }
+}
