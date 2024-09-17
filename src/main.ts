@@ -1,8 +1,12 @@
 import './style.css'
 
+let isSpeaking = false;
+
 document.querySelectorAll('[data-click-speech]').forEach((element) => {
 
   element.addEventListener('click', (event) => {
+    if (isSpeaking) return;
+
     const target = event.currentTarget || event.target;
     if (!target) return;
     const before = getComputedStyle(<Element>target, ":before");
@@ -18,6 +22,16 @@ document.querySelectorAll('[data-click-speech]').forEach((element) => {
         if (!text) return;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'fr-FR';
+        utterance.onstart = () => {
+          isSpeaking = true;
+          document.body.classList.add('is-speaking');
+          (<Element>target).classList.add('active');
+        };
+        utterance.onend = () => {
+          isSpeaking = false
+          document.body.classList.remove('is-speaking');
+          (<Element>target).classList.remove('active');
+        };
         speechSynthesis.speak(utterance);
       }
     }
