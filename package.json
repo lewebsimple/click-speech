@@ -2,7 +2,7 @@
   "name": "@lewebsimple/click-speech",
   "description": "Read out the text of the clicked element with data-click-speech attribute",
   "author": "Websimple <info@websimple.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "type": "module",
   "files": [
