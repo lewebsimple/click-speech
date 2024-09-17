@@ -2,7 +2,7 @@
   "name": "@lewebsimple/click-speech",
   "description": "Read out the text of the clicked element with data-click-speech attribute",
   "author": "Websimple <info@websimple.com>",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "type": "module",
   "files": [
@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublish": "pnpm build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
